@@ -83,7 +83,6 @@ client
 			成功: 0
 			失败: -1 errno
 
-			
 size_t  在32位系统上定义为 unsigned int 也就是说在32位系统上是32位无符号整形。在64位系统上定义为 unsigned long 也就是说在64位系统上是64位无符号整形
 
 ssize_t  size_t这个数据类型用来表示可以被执行读写操作的数据块的大小.它和size_t类似,但必需是signed.意即：它表示的是signed size_t类型的   
