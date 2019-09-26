@@ -63,6 +63,18 @@ server
 	    	成功：与服务器进行数据通信的socket对应的文件描述
 	    	失败: -1, errno
 
+	ssize_t read(int fd,void *buf,size_t count);
+		fd: 文件描述符;
+		buf: 为读出数据的缓冲区;
+		count: 为每次读取的字节数(是请求读取的字节数，读上来的数据保
+         存在缓冲区buf中，同时文件的当前读写位置向后移);
+
+    ssize_t write(int fd,void *buf,size_t count);
+    	fd: 是文件描述符;
+		buf: 需要写入的数据，通常为字符串;
+		count: 每次写入的字节数;
+
+client
 	int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);		//使用现有socket与服务器建立连接
 		sockfd: socket函数返回值
 		addr: 传入参数,服务器的地址结构
@@ -71,7 +83,7 @@ server
 			成功: 0
 			失败: -1 errno
 
-
+			
 size_t  在32位系统上定义为 unsigned int 也就是说在32位系统上是32位无符号整形。在64位系统上定义为 unsigned long 也就是说在64位系统上是64位无符号整形
 
 ssize_t  size_t这个数据类型用来表示可以被执行读写操作的数据块的大小.它和size_t类似,但必需是signed.意即：它表示的是signed size_t类型的   
